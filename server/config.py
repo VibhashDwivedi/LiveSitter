@@ -1,2 +1,6 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 class Config:
-    MONGO_URI = 'mongodb+srv://vibhashdwivedi96:livesitter@cluster0.1zdfa.mongodb.net/Livesitter?retryWrites=true&w=majority&appName=Cluster0'
+    MONGO_URI = os.getenv('MONGO_URI')
