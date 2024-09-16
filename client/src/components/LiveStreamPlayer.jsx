@@ -3,6 +3,7 @@ import Draggable from 'react-draggable';
 import Overlay from './Overlay';
 import EditOverlayForm from './EditOverlayForm';
 import { fetchOverlays, addOverlay, updateOverlay, deleteOverlay, uploadImage } from '../api';
+import Swal from 'sweetalert2';
 
 const LiveStreamPlayer = ({ src }) => {
   const videoRef = useRef(null);
@@ -19,6 +20,24 @@ const LiveStreamPlayer = ({ src }) => {
   }, []);
 
   const handleAddOverlay = () => {
+    if (newOverlay.type === 'text' && !newOverlay.content.trim()) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Text content cannot be empty!',
+      });
+      return;
+    }
+
+    if (newOverlay.type === 'image' && !imageFile) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Please choose an image file!',
+      });
+      return;
+    }
+
     if (newOverlay.type === 'image' && imageFile) {
       uploadImage(imageFile)
         .then(data => {
@@ -98,7 +117,7 @@ const LiveStreamPlayer = ({ src }) => {
             position: 'absolute',
             cursor: 'move',
             padding: '5px',
-            backgroundColor: 'rgba(240, 240, 240)',
+            backgroundColor: 'rgba(255, 255, 255, 0.7)',
             transform: 'translate(-50%, -50%)',
             textAlign: 'center' ,
             border: 'none' 
@@ -114,7 +133,7 @@ const LiveStreamPlayer = ({ src }) => {
       <div className='p-2'>
         <input
           type="text"
-          placeholder="Write text here"
+          placeholder="Text"
           value={newOverlay.content}
           className='form-control'
           onChange={(e) => setNewOverlay({ ...newOverlay, content: e.target.value })}
