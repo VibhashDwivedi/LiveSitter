@@ -60,6 +60,33 @@ The server will run successfully on localhost `3000`.
 - *model.py*: Overlay model and methods for CRUD operations.
 - *requirements.txt*: Lists the dependencies for the Flask application
 
+## Frontend Structure
+
+- *LiveStreamPlayer.jsx*: Main component for rendering the video player and managing overlays.
+- *Overlay.jsx*: Component for rendering and managing individual draggable overlays.
+- *EditOverlayForm.jsx*: Component for editing overlay properties in a form.
+- *api.js*: Contains functions for making API requests to the backend for overlay operations.
+
+## Screenshots
+
+`Add Overlay`
+
+![](https://github.com/VibhashDwivedi/LiveSitter/blob/main/screenshots/Screenshot%20(359).png?raw=true)
+
+![](https://github.com/VibhashDwivedi/LiveSitter/blob/main/screenshots/Screenshot%20(360).png?raw=true)
+
+`Edit Overlay`
+
+![](https://github.com/VibhashDwivedi/LiveSitter/blob/main/screenshots/Screenshot%20(362).png?raw=true)
+
+![](https://github.com/VibhashDwivedi/LiveSitter/blob/main/screenshots/Screenshot%20(363).png?raw=true)
+
+`Delete Overlay`
+
+![](https://github.com/VibhashDwivedi/LiveSitter/blob/main/screenshots/Screenshot%20(364).png?raw=true)
+
+
+
 
 
     
