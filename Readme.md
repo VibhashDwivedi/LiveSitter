@@ -36,7 +36,7 @@ The server will run successfully on localhost `5000`.
 
 # Steps to Run Frontend:
 
-1. **Navigate to the first-assignment Directory:**
+1. **Navigate to the client Directory:**
     ```sh
     cd client
     ```
