@@ -53,14 +53,14 @@ The server will run successfully on localhost `3000`.
 
 ## Backend Structutre
 
-    ```sh
+    
     - *uploads/*: Directory for storing uploaded files.
     - *app.py*: Main entry point for the Flask application.
     - *config.py*: Configuration settings for the Flask application, also contains routes
     - *db.py*: Database initialization.
     - *model.py*: Overlay model and methods for CRUD operations.
     - *requirements.txt*: Lists the dependencies for the Flask application.
-    ```
+
     
 
 
